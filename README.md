@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # COINPI
 <img src="http://www.utsalamanca.edu.mx/assets/img/pagina-principal/logouts.png" style="width: 220px;" alt="Universidad Tecnológica de Salamanca">
 
@@ -28,3 +29,7 @@ ng new coinpi --skip-git
 
 ##
 <p style="color:yellow">Si te gusta nuestro proyecto por favor deja una estrella ☆<p>
+=======
+# uts
+Universidad Tecnológica de Salamanca
+>>>>>>> 507e05d8de9dff5df9649ee1e7d63b3d2cdbf9b8
