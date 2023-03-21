@@ -23,7 +23,7 @@ ng new coinpi --skip-git
 ## Subir cambios del proyecto a servidor de producción
 
 - Entrar al contenedor `docker exec -i -t coinpi-web-1 /bin/sh`
-- Compilar el codigo **`ng build --prod --build-optimizer --base-href=./`**
+- Compilar el codigo **`ng build --configuration production`**
 - Subir archivos de la carpeta /dist/COINPI/ al servidor de producción
 
 ##
