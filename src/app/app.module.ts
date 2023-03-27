@@ -14,6 +14,8 @@ import { HotelesComponent } from './views/hoteles/hoteles.component';
 import { ContactoComponent } from './views/contacto/contacto.component';
 import { CronogramaComponent } from './views/cronograma/cronograma.component';
 import { LugarEventoComponent } from './views/lugar-evento/lugar-evento.component';
+import { DetalleInstructorComponent } from './articulos/detalle-instructor/detalle-instructor.component';
+import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { LugarEventoComponent } from './views/lugar-evento/lugar-evento.componen
     ContactoComponent,
     CronogramaComponent,
     LugarEventoComponent,
+    DetalleInstructorComponent,
+    AcercaDeComponent,
   ],
   imports: [
     BrowserModule,
