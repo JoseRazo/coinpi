@@ -16,6 +16,7 @@ import { CronogramaComponent } from './views/cronograma/cronograma.component';
 import { LugarEventoComponent } from './views/lugar-evento/lugar-evento.component';
 import { DetalleInstructorComponent } from './articulos/detalle-instructor/detalle-instructor.component';
 import { AcercaDeComponent } from './acerca-de/acerca-de.component';
+import { HeaderPageComponent } from './views/header-page/header-page.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AcercaDeComponent } from './acerca-de/acerca-de.component';
     LugarEventoComponent,
     DetalleInstructorComponent,
     AcercaDeComponent,
+    HeaderPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,11 @@ import { AcercaDeComponent } from './acerca-de/acerca-de.component';
       {
         path: '',
         component: HomeComponent,
+      },
+      //Acerca de
+      {
+        path: 'acerca-de',
+        component: AcercaDeComponent,
       },
     ]),
   ],
