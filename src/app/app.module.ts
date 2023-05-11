@@ -17,6 +17,9 @@ import { LugarEventoComponent } from './views/lugar-evento/lugar-evento.componen
 import { DetalleInstructorComponent } from './articulos/detalle-instructor/detalle-instructor.component';
 import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +38,7 @@ import { AcercaDeComponent } from './acerca-de/acerca-de.component';
     AcercaDeComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     RouterModule.forRoot([
       //HOME

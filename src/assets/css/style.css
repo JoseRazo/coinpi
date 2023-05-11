@@ -527,6 +527,13 @@ h6 {
   text-transform: uppercase;
 }
 
+#hero h2{
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+}
+
 #hero h1 span {
   color: #f82249;
 }

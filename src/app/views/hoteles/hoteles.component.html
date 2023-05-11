@@ -9,70 +9,21 @@
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" *ngFor="let item of hotel">
                 <div class="hotel">
                     <div class="hotel-img">
-                        <img src="assets/img/hotels/1.jpg" alt="Hotel 1" class="img-fluid">
+                        <img src="{{ item.imagen }}" alt="Hotel 1" class="img-fluid">
                     </div>
-                    <h3><a href="#" target="_blank">Hampton Inn & Suites by Hilton Salamanca Bajio</a></h3>
+                    <h3><a href="#" target="_blank">{{ item.nombre }}</a></h3>
                     <div class="stars">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
                     </div>
-                    <p>Carretera federal 45km. 100 + 500 Tramo Irapuato-Salamanca 36875, Salamanca Guanajuato T.</p>
-                    <p><a href="https://www.hilton.com/en/hotels/qrosahx-hampton-suites-salamanca-bajio/?SEO_id=GMB-AMER-XS-QROSAHX&y_source=1_MTIxNjk1MzYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D"> Ir a sitio web</a></p>
+                    <p>{{ item.direccion }}</p>
+                    <p><a href="{{ item.urls }}"> Ir a sitio web</a></p>
                 </div>
             </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="hotel">
-                    <div class="hotel-img">
-                        <img src="assets/img/hotels/2.jpg" alt="Hotel 2" class="img-fluid">
-                    </div>
-                    <h3><a href="#">Hilton Garden Inn Salamanca</a></h3>
-                    <div class="stars">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <p>Av. Prolongacion Morelos No. 2500 Col. El Pirul 36765, Salamanca Guanajuato</p>
-                    <p><a href="https://www.hilton.com/en/hotels/bjxsagi-hilton-garden-inn-salamanca/?SEO_id=GMB-AMER-GI-BJXSAGI&y_source=1_MTIxNjk1MTAtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D"> Ir a sitio web</a></p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="hotel">
-                    <div class="hotel-img">
-                        <img src="assets/img/hotels/2.jpg" alt="Hotel 2" class="img-fluid">
-                    </div>
-                    <h3><a href="#">City Express Salamanca</a></h3>
-                    <div class="stars">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <p>Blvrd. Faja De Oro 1805 Col. El Pirul 36740, Salamanca Guanajuato</p>
-                    <p><a href="https://www.cityexpress.com/express/hoteles-mexico/guanajuato/salamanca/salamanca"> Ir a sitio web</a></p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="hotel">
-                    <div class="hotel-img">
-                        <img src="assets/img/hotels/2.jpg" alt="Hotel 2" class="img-fluid">
-                    </div>
-                    <h3><a href="#">Casa Inn Irapuato</a></h3>
-                    <div class="stars">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <p>Las Villas 621 Col. 1ro de mayo 36644, Irapuato Guanajuato</p>
-                    <p><a href="https://www.casainn.com.mx/es/"> Ir a sitio web</a></p>
-                </div>
-            </div>
-
         </div>
     </div>
 
