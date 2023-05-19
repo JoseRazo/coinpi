@@ -1,4 +1,13 @@
-<section id="acerca-de"></section>
-<div>
-    <h4>Acerca de!!!</h4>
+<app-header></app-header>
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+        <h1 class="mb-4 pb-0">Acerca de </h1>
+    </div>
+</section><!-- End Hero Section -->
+<div class="container" id="acerca-de" *ngFor="let evento of eventos">
+    <h1 class="text-center">{{ evento.nombre}}</h1>
+    <p [innerHTML]="evento.descripcion"></p>
 </div>
+
+<app-footer></app-footer>

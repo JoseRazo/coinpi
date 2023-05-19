@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InstructoresService } from 'src/app/services/instructores/instructores.service';
 import { Instructor } from 'src/app/services/instructores/instructor.interfaces';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router';  
 import { Observable } from "rxjs";
 
 @Component({

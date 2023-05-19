@@ -9,19 +9,19 @@
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
 
-            <div class="col-lg-4 col-md-6" *ngFor="let item of hotel">
+            <div class="col-lg-4 col-md-6" *ngFor="let hotel of hoteles">
                 <div class="hotel">
                     <div class="hotel-img">
-                        <img src="{{ item.imagen }}" alt="Hotel 1" class="img-fluid">
+                        <img src="{{ hotel.imagen }}" alt="Hotel 1" class="img-fluid">
                     </div>
-                    <h3><a href="#" target="_blank">{{ item.nombre }}</a></h3>
+                    <h3><a href="#" target="_blank">{{ hotel.nombre }}</a></h3>
                     <div class="stars">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
                     </div>
-                    <p>{{ item.direccion }}</p>
-                    <p><a href="{{ item.urls }}"> Ir a sitio web</a></p>
+                    <p [innerHTML]="hotel.direccion"></p>
+                    <p><a href="{{ hotel.url }}"> Ir a sitio web</a></p>
                 </div>
             </div>
         </div>

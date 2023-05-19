@@ -3,7 +3,7 @@
     <div class="container" data-aos="fade-up">
         <div class="section-header">
             <h2>CRONOGRAMA DEL EVENTO</h2>
-            <p>Horarios de cada taller</p>
+            <h3 class="sub-heading">Conferencias y Talleres Impartidos</h3>
         </div>
 
         <ul class="nav nav-tabs" role="tablist" data-aos="fade-up" data-aos-delay="100">
@@ -15,559 +15,114 @@
             </li>
         </ul>
 
-        <h3 class="sub-heading">Voluptatem nulla veniam soluta et corrupti consequatur neque eveniet officia. Eius
-            necessitatibus voluptatem quis labore perspiciatis quia.</h3>
-
         <div class="tab-content row justify-content-center" data-aos="fade-up" data-aos-delay="200">
 
             <!-- Schdule Day 1 -->
             <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
-                <!--Inicio grupo 1-->
-                <h3 class="sub-heading">GRUPO 1</h3>
-
-                <div class="row schedule-item" *ngFor="let item of cronogramas">
-                    <div class="col-md-2"><time>{{item.hora}}</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src={{item.fotografia}} alt="">
+                <h3 class="">Actividades</h3>
+                <ng-container *ngFor="let item of cronogramas">
+                    <div class="row schedule-item" *ngIf="item.dia === 1 && item.tipo_actividad === 'otro'">
+                        <div class="col-md-2"><time>{{item.hora_inicio}} a {{item.hora_fin}}</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="{{item.curso?.instructor?.fotografia}}" alt="">
+                            </div>
+                            <h4>{{item.otra_actividad}}</h4>
+                            <h4>{{item.curso?.nombre}}</h4>
+                            <h4>{{item.empresa?.nombre}}</h4>
+                            <p [innerHTML]="item.curso?.objetivo"></p>
                         </div>
-                        <h4>{{item.actividad}}</h4>
-                        <p>{{item.descripcion}}</p>
                     </div>
-                </div>
+                </ng-container>
+
+                <h3 class="mt-4">Talleres</h3>
+                <ng-container *ngFor="let item of cronogramas">
+                    <div class="row schedule-item" *ngIf="item.dia === 1 && item.tipo_actividad === 'talleres'">
+                        <div class="col-md-2"><time>{{item.hora_inicio}} a {{item.hora_fin}}</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="{{item.curso?.instructor?.fotografia}}" alt="">
+                            </div>
+                            <h4>{{item.otra_actividad}}</h4>
+                            <h4>{{item.curso?.nombre}}</h4>
+                            <h4>{{item.empresa?.nombre}}</h4>
+                            <p [innerHTML]="item.curso?.objetivo"></p>
+                        </div>
+                    </div>
+                </ng-container>
+
+                <h3 class="mt-4">Visitas Industriales</h3>
+                <ng-container *ngFor="let item of cronogramas">
+                    <div class="row schedule-item" *ngIf="item.dia === 1 && item.tipo_actividad === 'visitas_industriales'">
+                        <div class="col-md-2"><time>{{item.hora_inicio}} a {{item.hora_fin}}</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="{{item.curso?.instructor?.fotografia}}" alt="">
+                            </div>
+                            <h4>{{item.otra_actividad}}</h4>
+                            <h4>{{item.curso?.nombre}}</h4>
+                            <h4>{{item.empresa?.nombre}}</h4>
+                            <p [innerHTML]="item.curso?.objetivo"></p>
+                        </div>
+                    </div>
+                </ng-container>
             </div>
-        </div>
-                
-            <!-- End Schdule Day 1 -->
 
             <!-- Schdule Day 2 -->
-            <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
-
-                <h3 class="sub-heading">GRUPO 1</h3>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-12:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
+            <div role="tabpanel" class="col-lg-9 tab-pane fade show" id="day-2">
+                <h3 class="">Actividades</h3>
+                <ng-container *ngFor="let item of cronogramas">
+                    <div class="row schedule-item" *ngIf="item.dia === 2 && item.tipo_actividad === 'otro'">
+                        <div class="col-md-2"><time>{{item.hora_inicio}} a {{item.hora_fin}}</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="{{item.curso?.instructor?.fotografia}}" alt="">
+                            </div>
+                            <h4>{{item.otra_actividad}}</h4>
+                            <h4>{{item.curso?.nombre}}</h4>
+                            <h4>{{item.empresa?.nombre}}</h4>
+                            <p [innerHTML]="item.curso?.objetivo"></p>
                         </div>
-                        <h4>Danone</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
                     </div>
-                </div>
+                </ng-container>
 
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-12:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
+                <h3 class="mt-4">Talleres</h3>
+                <ng-container *ngFor="let item of cronogramas">
+                    <div class="row schedule-item" *ngIf="item.dia === 2 && item.tipo_actividad === 'talleres'">
+                        <div class="col-md-2"><time>{{item.hora_inicio}} a {{item.hora_fin}}</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="{{item.curso?.instructor?.fotografia}}" alt="">
+                            </div>
+                            <h4>{{item.otra_actividad}}</h4>
+                            <h4>{{item.curso?.nombre}}</h4>
+                            <h4>{{item.empresa?.nombre}}</h4>
+                            <p [innerHTML]="item.curso?.objetivo"></p>
                         </div>
-                        <h4>Mazda Motor</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
                     </div>
-                </div>
+                </ng-container>
 
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-12:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
+                <h3 class="mt-4">Visitas Industriales</h3>
+                <ng-container *ngFor="let item of cronogramas">
+                    <div class="row schedule-item" *ngIf="item.dia === 2 && item.tipo_actividad === 'visitas_industriales'">
+                        <div class="col-md-2"><time>{{item.hora_inicio}} a {{item.hora_fin}}</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="{{item.curso?.instructor?.fotografia}}" alt="">
+                            </div>
+                            <h4>{{item.otra_actividad}}</h4>
+                            <h4>{{item.curso?.nombre}}</h4>
+                            <h4>{{item.empresa?.nombre}}</h4>
+                            <p [innerHTML]="item.curso?.objetivo"></p>
                         </div>
-                        <h4>Mazda Logistica</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
                     </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-12:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>DNMex</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-12:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>YKM</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-12:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>Purina Salamanca</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-12:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>Purina Irapuato</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-12:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>Pastas la Moderna</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-12:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>Pastas la Luz</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-12:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>Arcosa</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-12:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>Servilaminas Summit</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-12:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>Iberica Tiles</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-12:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>Daltile</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-12:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>Nissen</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-12:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>Furukawa</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-12:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>Henkel</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-12:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>Nakagawa</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-12:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>ENAT</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>12:00-14:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>Concurso de futbol LEGO</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>15:00-16:30 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>Conferencia Magistral (Panel de expertos)</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>16:30-17:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>Clausura del Evento</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <h3 class="sub-heading">GRUPO 2</h3>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>Introduccion al diseño de PCBS</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/2.jpg" alt="Hubert Hirthe">
-                        </div>
-                        <h4>Introduccion al diseño asistido por computadora en la interface catia</h4>
-                        <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/3.jpg" alt="Cole Emmerich">
-                        </div>
-                        <h4>Introduccion al moldeo de plasticos por inyeccion</h4>
-                        <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/4.jpg" alt="Jack Christiansen">
-                        </div>
-                        <h4>Introduccion al diseño asistido por computadora NX12 SIEMENS</h4>
-                        <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/5.jpg" alt="Alejandrin Littel">
-                        </div>
-                        <h4>Introduccion a la operacion de CNC</h4>
-                        <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/6.jpg" alt="Willow Trantow">
-                        </div>
-                        <h4>Introduccion a las maquinas y herramientas</h4>
-                        <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/6.jpg" alt="Willow Trantow">
-                        </div>
-                        <h4>Introduccion a la metalografia</h4>
-                        <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/6.jpg" alt="Willow Trantow">
-                        </div>
-                        <h4>Gestion de proyectos</h4>
-                        <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/6.jpg" alt="Willow Trantow">
-                        </div>
-                        <h4>Solucion creativa de problemas</h4>
-                        <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/6.jpg" alt="Willow Trantow">
-                        </div>
-                        <h4>Team building</h4>
-                        <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/6.jpg" alt="Willow Trantow">
-                        </div>
-                        <h4>Introduccion a la impresion 3D</h4>
-                        <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/6.jpg" alt="Willow Trantow">
-                        </div>
-                        <h4>Introduccion a robot yaskawa</h4>
-                        <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/6.jpg" alt="Willow Trantow">
-                        </div>
-                        <h4>Seguridad e higiene industrial</h4>
-                        <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/6.jpg" alt="Willow Trantow">
-                        </div>
-                        <h4>Metrologia dimensional</h4>
-                        <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/6.jpg" alt="Willow Trantow">
-                        </div>
-                        <h4>Gestion de proyectos</h4>
-                        <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/6.jpg" alt="Willow Trantow">
-                        </div>
-                        <h4>Procesos de manufactura</h4>
-                        <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/6.jpg" alt="Willow Trantow">
-                        </div>
-                        <h4>Montacargas</h4>
-                        <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/6.jpg" alt="Willow Trantow">
-                        </div>
-                        <h4>Introduccion a la soldadura</h4>
-                        <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/6.jpg" alt="Willow Trantow">
-                        </div>
-                        <h4>Intencion de diseño en CAD SW</h4>
-                        <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/6.jpg" alt="Willow Trantow">
-                        </div>
-                        <h4>Sistemas CAM aplicados a torno</h4>
-                        <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/6.jpg" alt="Willow Trantow">
-                        </div>
-                        <h4>Procesos de ensamblaje de autopartes (metodos de ensamblaje de motor)</h4>
-                        <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/6.jpg" alt="Willow Trantow">
-                        </div>
-                        <h4>Manufactura de prototipos</h4>
-                        <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>09:00-15:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/6.jpg" alt="Willow Trantow">
-                        </div>
-                        <h4>Manufactura flexible</h4>
-                        <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>12:00-14:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>Concurso de futbol LEGO</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>15:00-16:30 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>Conferencia Magistral (Panel de expertos)</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
-                <div class="row schedule-item">
-                    <div class="col-md-2"><time>16:30-17:00 hrs</time></div>
-                    <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/1.jpg" alt="Brenden Legros">
-                        </div>
-                        <h4>Clausura del Evento</h4>
-                        <p>Facere provident incidunt quos voluptas.</p>
-                    </div>
-                </div>
-
+                </ng-container>
             </div>
-            <!-- End Schdule Day 2 -->
-
         </div>
+
+        <!-- End Schdule Day 1 -->
+
+    </div>
 
 
 </section><!-- End Schedule Section -->

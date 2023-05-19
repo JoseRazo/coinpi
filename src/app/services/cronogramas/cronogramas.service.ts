@@ -3,17 +3,17 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Cronograma } from './cronogramas.interfaces';
 
-
 @Injectable({
   providedIn: 'root'
 })
+
 export class CronogramasService {
 
-  private api_Url = "https://127.0.0.1:8001/api";
+  private apiUrl = "http://127.0.0.1:8001/api";
 
   headers = new HttpHeaders()
-  .set("Content-Type", "application/json")
-  .set("Accept", "application/json");
+    .set("Content-Type", "application/json")
+    .set("Accept", "application/json");
   httpOptions = {
     headers: this.headers, 
   };  
@@ -21,6 +21,6 @@ export class CronogramasService {
   constructor(private http: HttpClient) { }
 
   getCronogramas(): Observable<Cronograma[]>{
-    return this.http.get<Cronograma[]>(this.api_Url + "/cronogramas");
+    return this.http.get<Cronograma[]>(this.apiUrl + "/cronogramas");
   }
 }

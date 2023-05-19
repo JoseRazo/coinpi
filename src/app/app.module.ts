@@ -46,6 +46,10 @@ import { HttpClientModule } from '@angular/common/http';
         path: '',
         component: HomeComponent,
       },
+      {
+        path: 'acerca-de',
+        component: AcercaDeComponent,
+      },
     ]),
   ],
   providers: [],

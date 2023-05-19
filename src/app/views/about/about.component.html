@@ -2,12 +2,10 @@
 <section id="about">
     <div class="container" data-aos="fade-up">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6" *ngFor="let evento of eventos">
                 <h2>Acerca de COINPI</h2>
-                <p>Este congreso surge con el propósito de analizar, debatir, consensuar y fortalecer el rol 
-                    de cooperación Universidad-Empresa en el fomento del liderazgo y el desarrollo social 
-                    reuniendo a investigadores de diversas universidades...
-                    <a href="http://127.0.0.1:5500/src/app/acerca-de/acerca-de.component.html"> Ver Mas</a></p> 
+                <p [innerHTML]="evento.descripcion"></p>
+                    <a routerLink="acerca-de"> Ver Mas</a>
             </div>
             <div class="col-lg-3">
                 <h3>¿Donde?</h3>
