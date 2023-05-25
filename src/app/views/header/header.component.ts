@@ -14,8 +14,11 @@ export class HeaderComponent implements OnInit {
 
   headers: Header[];
 
-  constructor(private headerService: HeadersService) {
+  constructor(private headerService: HeadersService,private router:Router) {
     this.headers = [];
+  }
+  isActiveRoute(route:string):boolean{
+    return this.router.url === route;
   }
 
   ngOnInit() {

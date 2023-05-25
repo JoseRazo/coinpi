@@ -10,7 +10,9 @@
 
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-                <li *ngFor="let header of headers"><a class="nav-link scrollto active" href="{{ header.seccion_id }}">{{ header.seccion }}</a></li>
+                <li *ngFor="let header of headers">
+                  <a class="nav-link scrolltos" [ngClass]="{'active':isActiveRoute('{{ header.seccion_id }}')}" href="{{ header.seccion_id }}">{{ header.seccion }}</a>
+                </li>
                 
                 <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
