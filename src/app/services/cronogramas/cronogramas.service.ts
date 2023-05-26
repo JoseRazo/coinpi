@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Cronograma } from './cronogramas.interfaces';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { Cronograma } from './cronogramas.interfaces';
 
 export class CronogramasService {
 
-  private apiUrl = "http://127.0.0.1:8001/api";
+  private apiUrl = environment.apiUrl;
 
   headers = new HttpHeaders()
     .set("Content-Type", "application/json")

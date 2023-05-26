@@ -1,17 +1,15 @@
 <!-- ======= About Section ======= -->
 <section id="about">
     <div class="container" data-aos="fade-up">
-        <div class="row">
-            <div class="col-lg-6" *ngFor="let evento of eventos">
+        <div class="row" *ngFor="let evento of eventos">
+            <div class="col-lg-6">
                 <h2>Acerca de COINPI</h2>
-                <p [innerHTML]="evento.descripcion"></p>
+                <p [innerHTML]="truncateText(evento.descripcion, 400)"></p>
                     <a routerLink="acerca-de"> Ver Mas</a>
             </div>
             <div class="col-lg-3">
                 <h3>¿Donde?</h3>
-                <p>Universidad Tecnologica de Salamanca.</p>
-                <p>IECA Plantel Salamanca.</p>
-                <p>Salamanca, Guanajuato, Mexico.</p>
+                <p>{{ evento.lugar }}</p>
             </div>
             <div class="col-lg-3">
                 <h3>¿Cuando?</h3>

@@ -6,8 +6,8 @@
     </div>
 </section><!-- End Hero Section -->
 <div class="container" id="acerca-de" *ngFor="let evento of eventos">
-    <h1 class="text-center">{{ evento.nombre}}</h1>
-    <p [innerHTML]="evento.descripcion"></p>
+    <h1 class="text-center mb-5">{{ evento.nombre}}</h1>
+    <p [innerHTML]="evento.descripcion" class="text-justify"></p>
 </div>
 
 <app-footer></app-footer>

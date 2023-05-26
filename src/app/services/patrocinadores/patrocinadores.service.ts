@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Patrocinador } from './patrocinador.interfaces';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { Patrocinador } from './patrocinador.interfaces';
 
 export class PatrocinadoresService {
 
-  private apiUrl = "http://127.0.0.1:8001/api";
+  private apiUrl = environment.apiUrl;
 
   headers = new HttpHeaders()
     .set("Content-Type", "application/json")

@@ -10,3 +10,7 @@
 #acerca-de {
     padding: 60px 0 60px 0;
 }
+
+.text-justify {
+    text-align: justify !important;
+}

@@ -4,17 +4,17 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-3 col-md-6 footer-info">
-            <img src="assets/img/logo.png" alt="TheEvenet">
-            <p>Este congreso surge con el propósito de analizar, debatir, consensuar y fortalecer el 
-              rol de cooperación Universidad-Empresa en el fomento del liderazgo y el desarrollo 
-              social reuniendo a investigadores de diversas universidades... <a href="http://127.0.0.1:5500/src/app/acerca-de/acerca-de.component.html"> Ver Mas</a></p> 
+          <div class="col-lg-4 col-md-4 footer-info">
+            <div *ngFor="let evento of eventos">
+              <img src="{{evento.logo}}" alt="TheEvenet">
+              <p [innerHTML]="evento.descripcion"><a routerLink="acerca-de"> Ver Mas</a></p>
+            </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <div class="col-lg-4 col-md-4 footer-links">
             <h4>Links de uso</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#hero">Home</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#about">Acerca de</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#speakers">Instructores</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#schedule">Cronograma</a></li>
@@ -26,14 +26,14 @@
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-contact">
+          <div class="col-lg-4 col-md-4 footer-contact">
             <h4>Contactanos</h4>
             <p>
               Av. Universidad Tecnológica 200, Ciudad Bajío <br>
               36766 Salamanca, Guanajuato<br>
               México <br>
-              <strong>Telefono:</strong> 464 647 3861<br>
-              <strong>Contacto: </strong> <a href="https://www.utsalamanca.edu.mx/contacto">UTS</a>
+              <strong>Telefono:</strong> (464) 64 73861 ext.: 128 y 120<br>
+              <strong>Email: </strong> coinpi@utsalamanca.edu.mx
             </p>
 
             <div class="social-links">
