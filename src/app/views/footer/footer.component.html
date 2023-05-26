@@ -7,7 +7,8 @@
           <div class="col-lg-4 col-md-4 footer-info">
             <div *ngFor="let evento of eventos">
               <img src="{{evento.logo}}" alt="TheEvenet">
-              <p [innerHTML]="evento.descripcion"><a routerLink="acerca-de"> Ver Mas</a></p>
+              <p [innerHTML]="truncateText(evento.descripcion, 400)"></p>
+              <a routerLink="acerca-de"> Ver Mas</a>
             </div>
           </div>
 
