@@ -16,7 +16,9 @@ import { CronogramaComponent } from './views/cronograma/cronograma.component';
 import { LugarEventoComponent } from './views/lugar-evento/lugar-evento.component';
 import { DetalleInstructorComponent } from './articulos/detalle-instructor/detalle-instructor.component';
 import { AcercaDeComponent } from './acerca-de/acerca-de.component';
-import { HeaderPageComponent } from './views/header-page/header-page.component';
+
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -34,9 +36,9 @@ import { HeaderPageComponent } from './views/header-page/header-page.component';
     LugarEventoComponent,
     DetalleInstructorComponent,
     AcercaDeComponent,
-    HeaderPageComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     RouterModule.forRoot([
       //HOME
@@ -44,7 +46,6 @@ import { HeaderPageComponent } from './views/header-page/header-page.component';
         path: '',
         component: HomeComponent,
       },
-      //Acerca de
       {
         path: 'acerca-de',
         component: AcercaDeComponent,
