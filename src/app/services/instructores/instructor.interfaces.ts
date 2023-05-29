@@ -9,4 +9,10 @@ export class Instructor {
     fecha_creacion!: Date;
     fecha_actualizacion!: Date;
     fotografia!: string;
+    cursos?: Cursos[];
+}
+
+interface Cursos {
+    id?: number;
+    nombre?: string;
 }

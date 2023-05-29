@@ -14,7 +14,8 @@
                 <div class="contact-address">
                     <i class="bi bi-geo-alt"></i>
                     <h3>Dirección</h3>
-                    <address>Av. Universidad Tecnológica 200, Ciudad Bajío, 36766 Salamanca, Guanajuato, México</address>
+                    <address>Av. Universidad Tecnológica 200, Ciudad Bajío, 36766 Salamanca, Guanajuato, México
+                    </address>
                 </div>
             </div>
 
@@ -37,21 +38,23 @@
         </div>
 
         <div class="form">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form [formGroup]="formularioContacto" (ngSubmit)="enviarFormulario()" class="php-email-form">
                 <div class="row">
-                    <div class="form-group col-md-6">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Tu nombre" required>
+                    <div class="form-group col-md-4">
+                        <input type="text" formControlName="nombre" class="form-control" placeholder="Tu nombre">
                     </div>
-                    <div class="form-group col-md-6 mt-3 mt-md-0">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Tu Email"
-                            required>
+                    <div class="form-group col-md-4 mt-3 mt-md-0">
+                        <input type="email" formControlName="email" class="form-control" placeholder="Tu Email">
+                    </div>
+                    <div class="form-group col-md-4 mt-3 mt-md-0">
+                        <input type="text" formControlName="telefono" class="form-control" placeholder="Tu Teléfono">
                     </div>
                 </div>
                 <div class="form-group mt-3">
-                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" required>
+                    <input type="text" formControlName="asunto" class="form-control" placeholder="Asunto">
                 </div>
                 <div class="form-group mt-3">
-                    <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" required></textarea>
+                    <textarea class="form-control" formControlName="mensaje" rows="5" placeholder="Mensaje"></textarea>
                 </div>
                 <div class="my-3">
                     <div class="loading">Cargando</div>
@@ -61,6 +64,7 @@
                 <div class="text-center"><button type="submit">Enviar</button></div>
             </form>
         </div>
+
 
     </div>
 </section><!-- End Contact Section -->

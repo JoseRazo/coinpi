@@ -11,15 +11,20 @@
                 <div class="speaker" data-aos="fade-up" data-aos-delay="100">
                     <img src="{{ instructor.fotografia }}" alt="{{ instructor.nombre }}" class="img-fluid">
                     <div class="details">
-                        <h3><a href="speaker-details.html">{{ instructor.nombre }}</a></h3>
+                        <h3><a>{{ instructor.nombre }}</a></h3>
                         <p>{{instructor.area_estudios}}</p>
-                        <p [innerHTML]="instructor.descripcion"></p>
-                        <div class="social">
+                        <div *ngIf="instructor.cursos">
+                            <div *ngFor="let curso of instructor.cursos">
+                                <p>{{ curso.nombre }}</p>
+                            </div>
+                        </div>
+                        
+                        <!-- <div class="social">
                             <a href=""><i class="bi bi-twitter"></i></a>
                             <a href=""><i class="bi bi-facebook"></i></a>
                             <a href=""><i class="bi bi-instagram"></i></a>
                             <a href=""><i class="bi bi-linkedin"></i></a>
-                        </div>  
+                        </div>   -->
                     </div>
                 </div>
             </div>
