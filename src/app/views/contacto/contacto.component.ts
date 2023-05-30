@@ -32,7 +32,8 @@ export class ContactoComponent {
       return; // Si el formulario es inválido, se detiene el proceso de envío y se muestran los mensajes de error
     }
 
-    const url = 'http://127.0.0.1:8001/api/enviar-formulario/'; // Reemplaza con la URL correcta de tu API REST
+    // const url = 'http://127.0.0.1:8001/api/enviar-formulario/';
+    const url = 'https://api.utsalamanca.edu.mx/api/enviar-formulario/';
     const formData = new FormData();
     formData.append('nombre', this.formularioContacto.get('nombre')?.value);
     formData.append('email', this.formularioContacto.get('email')?.value);
