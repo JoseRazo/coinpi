@@ -24,8 +24,9 @@ export class RegistroComponent {
       apellido_paterno: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(145)]),
       apellido_materno: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(145)]),
       escuela_procedencia: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(145)]),
-      // foto: new FormControl([null]),
+      foto: new FormControl([null]),
       referencia: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(145)]),
+      comprobante_pago: new FormControl([null]),
     });
   }
   onImageChanged(event: any) {
@@ -85,6 +86,7 @@ export class RegistroComponent {
             text: 'Ha ocurrido un error al enviar el formulario.\nComunícate directamente al teléfono (464) 64 73861 ext.: 128 y 120\no al correo coinpi@utsalamanca.edu.mx.',
             icon: 'error'
           });
+          this.formularioRegistro.reset();
         }
       );
   }

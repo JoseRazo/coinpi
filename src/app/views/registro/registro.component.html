@@ -67,7 +67,7 @@
                     </div>
 
                     <label for="name">Foto</label>
-                    <input type="file" accept="image/png, image/jpeg" (change)="onImageChanged($event)" required>
+                    <input type="file" accept="image/png, image/jpeg" formControlName="foto" (change)="onImageChanged($event)" required>
 
                     <label for="name">Referencia</label>
                     <input type="text" formControlName="referencia" placeholder="Referencia">
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                     <label for="name">Comprobante de Pago</label>
-                    <input type="file" accept="image/png, image/jpeg" (change)="onFileChanged($event)" required>
+                    <input type="file" accept=".pdf, image/png, image/jpeg" formControlName="comprobante_pago" (change)="onFileChanged($event)" required>
                 </div>
                 <div class="modal-footer">
                     <input class="btn btn-primary" type="submit" value="Registrarse">
