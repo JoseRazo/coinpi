@@ -8,11 +8,21 @@ import { Component, OnInit } from '@angular/core';
 
 export class HeaderComponent implements OnInit {
 
-  constructor() {
+  switchModal:boolean;
 
+  constructor() {
+    this.switchModal = false;
   }
 
   ngOnInit() {
+  }
+
+  abrirRegistro(){
+    if (this.switchModal == false){
+      this.switchModal = true;
+    } else {
+      this.switchModal = false;
+    }
   }
 
 }
