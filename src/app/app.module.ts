@@ -19,6 +19,7 @@ import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RegistroComponent } from './views/registro/registro.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     LugarEventoComponent,
     DetalleInstructorComponent,
     AcercaDeComponent,
+    RegistroComponent,
   ],
   imports: [
     HttpClientModule,
@@ -51,6 +53,10 @@ import { ReactiveFormsModule } from '@angular/forms';
       {
         path: 'acerca-de',
         component: AcercaDeComponent,
+      },
+      {
+        path: 'registro',
+        component: RegistroComponent,
       },
     ]),
   ],
