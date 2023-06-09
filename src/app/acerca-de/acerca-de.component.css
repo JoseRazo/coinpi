@@ -11,6 +11,7 @@
     padding: 60px 0 60px 0;
 }
 
-.text-justify {
+#eventoDescripcion {
     text-align: justify !important;
+    color: #002052;
 }
