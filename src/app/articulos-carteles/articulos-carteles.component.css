@@ -15,24 +15,22 @@
     text-align: justify !important;
 }
 
-.container_boton{
+.container_boton {
     display: grid;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-	
-a[download] 
-{ 
+
+.boton-descarga {
     padding: 10px;
-    background-color: #f82249; 
-    color:#ffff;
+    background-color: #f82249;
+    color: #ffff;
     border-radius: 10px;
     border: 1px solid #f82249;
 }
 
-a[download]:hover 
-{ 
+.boton-descarga:hover {
     background-color: #0e1b4d;
     border: 1px solid #f82249;
 }
