@@ -1,0 +1,38 @@
+#hero {
+    width: 100%;
+    height: 420px;
+    background: url(src/assets/img/hero-bg-article.PNG) top center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+
+#acerca-de {
+    padding: 60px 0 60px 0;
+}
+
+.text-justify {
+    text-align: justify !important;
+}
+
+.container_boton{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+	
+a[download] 
+{ 
+    padding: 10px;
+    background-color: #f82249; 
+    color:#ffff;
+    border-radius: 10px;
+    border: 1px solid #f82249;
+}
+
+a[download]:hover 
+{ 
+    background-color: #0e1b4d;
+    border: 1px solid #f82249;
+}
