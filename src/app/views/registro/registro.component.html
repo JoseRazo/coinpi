@@ -1,94 +1,111 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Registro</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form [formGroup]="formularioRegistro" (ngSubmit)="enviarFormulario()" enctype="multipart/form-data">
-                <div class="modal-body">
-                    <label for="name">Nombre</label>
-                    <input type="text" formControlName="nombre" placeholder="Nombre">
-                    <div *ngIf="enviadoIntentado && formularioRegistro.controls['nombre'].invalid" class="error">
-                        <div *ngIf="formularioRegistro.get('nombre')?.errors?.['required']">
-                            El nombre es requerido.
-                        </div>
-                        <div *ngIf="formularioRegistro.get('nombre')?.errors?.['minlength']">
-                            El nombre debe tener al menos 4 caracteres.
-                        </div>
-                        <div *ngIf="formularioRegistro.get('nombre')?.errors?.['maxlength']">
-                            El nombre no debe exceder los 145 caracteres.
-                        </div>
-                    </div>
+<app-header></app-header>
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+        <h1 class="mb-4 pb-0">Registro </h1>
+    </div>
+</section><!-- End Hero Section -->
+<!-- ======= Registro Section ======= -->
+<section id="registro" class="section-bg">
 
-                    <label for="name">Apellido Paterno</label>
-                    <input type="text" formControlName="apellido_paterno" placeholder="Apellido Paterno">
-                    <div *ngIf="enviadoIntentado && formularioRegistro.controls['apellido_paterno'].invalid"
-                        class="error">
-                        <div *ngIf="formularioRegistro.get('apellido_paterno')?.errors?.['required']">
-                            El apellido paterno es requerido.
-                        </div>
-                        <div *ngIf="formularioRegistro.get('apellido_paterno')?.errors?.['minlength']">
-                            El apellido paterno debe tener al menos 4 caracteres.
-                        </div>
-                        <div *ngIf="formularioRegistro.get('apellido_paterno')?.errors?.['maxlength']">
-                            El apellido paterno no debe exceder los 145 caracteres.
-                        </div>
-                    </div>
+    <div class="container" data-aos="fade-up">
 
-                    <label for="name">Apellido Materno</label>
-                    <input type="text" formControlName="apellido_materno" placeholder="Apellido Materno">
-                    <div *ngIf="enviadoIntentado && formularioRegistro.controls['apellido_materno'].invalid"
-                        class="error">
-                        <div *ngIf="formularioRegistro.get('apellido_materno')?.errors?.['required']">
-                            El apellido materno es requerido.
-                        </div>
-                        <div *ngIf="formularioRegistro.get('apellido_materno')?.errors?.['minlength']">
-                            El apellido materno debe tener al menos 4 caracteres.
-                        </div>
-                        <div *ngIf="formularioRegistro.get('apellido_materno')?.errors?.['maxlength']">
-                            El apellido materno no debe exceder los 145 caracteres.
-                        </div>
-                    </div>
+        <div class="form">
+            <form class="php-email-form" [formGroup]="formularioRegistro" (ngSubmit)="enviarFormulario()"
+                enctype="multipart/form-data">
 
-                    <label for="name">Escuela de Procedencia</label>
-                    <input type="text" formControlName="escuela_procedencia" placeholder="Escuela de Procedencia">
-                    <div *ngIf="enviadoIntentado && formularioRegistro.controls['escuela_procedencia'].invalid"
-                        class="error">
-                        <div *ngIf="formularioRegistro.get('escuela_procedencia')?.errors?.['required']">
-                            La escuela de procedencia es requerida.
-                        </div>
-                        <div *ngIf="formularioRegistro.get('escuela_procedencia')?.errors?.['minlength']">
-                            La escuela de procedencia debe tener al menos 3 caracteres.
-                        </div>
-                        <div *ngIf="formularioRegistro.get('escuela_procedencia')?.errors?.['maxlength']">
-                            La escuela de procedencia no debe exceder los 145 caracteres.
-                        </div>
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
+                <div *ngIf="enviadoIntentado && formularioRegistro.controls['nombre'].invalid" class="error">
+                    <div *ngIf="formularioRegistro.get('nombre')?.errors?.['required']">
+                        El nombre es requerido.
                     </div>
-
-                    <label for="name">Foto</label>
-                    <input type="file" accept="image/png, image/jpeg" (change)="onImageChanged($event)" required>
-
-                    <label for="name">Referencia</label>
-                    <input type="text" formControlName="referencia" placeholder="Referencia">
-                    <div *ngIf="enviadoIntentado && formularioRegistro.controls['referencia'].invalid" class="error">
-                        <div *ngIf="formularioRegistro.get('referencia')?.errors?.['required']">
-                            La referencia es requerida.
-                        </div>
-                        <div *ngIf="formularioRegistro.get('referencia')?.errors?.['minlength']">
-                            La referencia debe tener al menos 4 caracteres.
-                        </div>
-                        <div *ngIf="formularioRegistro.get('referencia')?.errors?.['maxlength']">
-                            La referencia no debe exceder los 145 caracteres.
-                        </div>
+                    <div *ngIf="formularioRegistro.get('nombre')?.errors?.['minlength']">
+                        El nombre debe tener al menos 4 caracteres.
                     </div>
-                    <label for="name">Comprobante de Pago</label>
-                    <input type="file" accept="image/png, image/jpeg" (change)="onFileChanged($event)" required>
+                    <div *ngIf="formularioRegistro.get('nombre')?.errors?.['maxlength']">
+                        El nombre no debe exceder los 145 caracteres.
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <input class="btn btn-primary" type="submit" value="Registrarse">
+
+
+                <label for="name">Apellido Paterno</label>
+                <input type="text" class="form-control" formControlName="apellido_paterno"
+                    placeholder="Apellido Paterno">
+                <div *ngIf="enviadoIntentado && formularioRegistro.controls['apellido_paterno'].invalid" class="error">
+                    <div *ngIf="formularioRegistro.get('apellido_paterno')?.errors?.['required']">
+                        El apellido paterno es requerido.
+                    </div>
+                    <div *ngIf="formularioRegistro.get('apellido_paterno')?.errors?.['minlength']">
+                        El apellido paterno debe tener al menos 4 caracteres.
+                    </div>
+                    <div *ngIf="formularioRegistro.get('apellido_paterno')?.errors?.['maxlength']">
+                        El apellido paterno no debe exceder los 145 caracteres.
+                    </div>
                 </div>
+
+                <label for="name">Apellido Materno</label>
+                <input type="text" class="form-control" formControlName="apellido_materno"
+                    placeholder="Apellido Materno">
+                <div *ngIf="enviadoIntentado && formularioRegistro.controls['apellido_materno'].invalid" class="error">
+                    <div *ngIf="formularioRegistro.get('apellido_materno')?.errors?.['required']">
+                        El apellido materno es requerido.
+                    </div>
+                    <div *ngIf="formularioRegistro.get('apellido_materno')?.errors?.['minlength']">
+                        El apellido materno debe tener al menos 4 caracteres.
+                    </div>
+                    <div *ngIf="formularioRegistro.get('apellido_materno')?.errors?.['maxlength']">
+                        El apellido materno no debe exceder los 145 caracteres.
+                    </div>
+                </div>
+
+                <label for="name">Escuela de Procedencia</label>
+                <input type="text" class="form-control" formControlName="escuela_procedencia"
+                    placeholder="Escuela de Procedencia">
+                <div *ngIf="enviadoIntentado && formularioRegistro.controls['escuela_procedencia'].invalid"
+                    class="error">
+                    <div *ngIf="formularioRegistro.get('escuela_procedencia')?.errors?.['required']">
+                        La escuela de procedencia es requerida.
+                    </div>
+                    <div *ngIf="formularioRegistro.get('escuela_procedencia')?.errors?.['minlength']">
+                        La escuela de procedencia debe tener al menos 3 caracteres.
+                    </div>
+                    <div *ngIf="formularioRegistro.get('escuela_procedencia')?.errors?.['maxlength']">
+                        La escuela de procedencia no debe exceder los 145 caracteres.
+                    </div>
+                </div>
+
+                <label for="name">Foto</label>
+                <input type="file" class="form-control" accept="image/png, image/jpeg" (change)="onImageChanged($event)"
+                    required>
+
+                <label for="name">Referencia</label>
+                <input type="text" class="form-control" formControlName="referencia" placeholder="Referencia">
+                <div *ngIf="enviadoIntentado && formularioRegistro.controls['referencia'].invalid" class="error">
+                    <div *ngIf="formularioRegistro.get('referencia')?.errors?.['required']">
+                        La referencia es requerida.
+                    </div>
+                    <div *ngIf="formularioRegistro.get('referencia')?.errors?.['minlength']">
+                        La referencia debe tener al menos 4 caracteres.
+                    </div>
+                    <div *ngIf="formularioRegistro.get('referencia')?.errors?.['maxlength']">
+                        La referencia no debe exceder los 145 caracteres.
+                    </div>
+                </div>
+                <label for="name">Comprobante de Pago</label>
+                <input type="file" class="form-control" accept="image/png, image/jpeg" (change)="onFileChanged($event)"
+                    required>
+
+                <div class="text-center mt-4">
+                    <button type="submit">Enviar Registro</button>
+                </div>
+
             </form>
         </div>
+
+
     </div>
-</div>
+</section><!-- End Registro Section -->
+
+
+<app-footer></app-footer>
