@@ -1,32 +1,99 @@
-   /* Estilos del formulario */
-  .modal-body {
-    display: grid;
-    gap: 10px;
-  }
- 
-  label {
-    font-weight: bold;
-  }
- 
-  input[type="text"],
-  input[type="email"] {
-    width: 100%;
-    padding: 5px;
-  }
- 
-  input[type="submit"] {
-    background-color: #f82249;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }
- 
-  input[type="submit"]:hover {
-    background-color: #8b1329;
-  }
+#hero {
+  width: 100%;
+  height: 420px;
+  background: url(src/assets/img/hero-bg-article.PNG) top center;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+}
+
+#registro {
+  padding: 60px 0 60px 0;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 25px;
+}
+
 .error {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+#registro .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+#registro .php-email-form .error-message br+br {
+  margin-top: 25px;
+}
+
+#registro .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+#registro .php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+#registro .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+
+#registro .php-email-form input,
+#registro .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+#registro .php-email-form input:focus,
+#registro .php-email-form textarea:focus {
+  border-color: #f82249;
+}
+
+#registro .php-email-form input {
+  padding: 10px 15px;
+}
+
+#registro .php-email-form textarea {
+  padding: 12px 15px;
+}
+
+#registro .php-email-form button[type=submit] {
+  background: #f82249;
+  border: 0;
+  padding: 10px 40px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+#registro .php-email-form button[type=submit]:hover {
+  background: #e0072f;
 }

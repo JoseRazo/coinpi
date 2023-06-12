@@ -16,7 +16,7 @@ export class RegistroComponent {
   formularioRegistro: FormGroup;
   enviadoIntentado: boolean = false; // Propiedad para controlar si se ha intentado enviar el formulario
 
-  
+
 
   constructor(private http: HttpClient) {
     this.formularioRegistro = new FormGroup({
@@ -28,6 +28,7 @@ export class RegistroComponent {
       referencia: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(145)]),
       comprobante_pago: new FormControl([null]),
     });
+    this.loadScripts();
   }
   onImageChanged(event: any) {
     this.imagen = event.target.files[0]
@@ -64,7 +65,7 @@ export class RegistroComponent {
     formData.append('foto', this.imagen!);
     formData.append('referencia', this.formularioRegistro.get('referencia')?.value);
     formData.append('comprobante_pago', this.file!);
- 
+
 
     this.http.post(url, formData)
       .subscribe(
@@ -89,6 +90,20 @@ export class RegistroComponent {
           this.formularioRegistro.reset();
         }
       );
+  }
+
+  loadScripts() {
+    const dynamicScripts = [
+      "assets/js/main.js",
+    ];
+    for (let i = 0; i < dynamicScripts.length; i++) {
+      const node = document.createElement("script");
+      node.src = dynamicScripts[i];
+      node.type = "text/javascript";
+      node.async = false;
+      node.charset = "utf-8";
+      document.getElementsByTagName("head")[0].appendChild(node);
+    }
   }
 
 }
