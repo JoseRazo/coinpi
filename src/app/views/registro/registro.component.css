@@ -1,3 +1,25 @@
+.loading {
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  animation: loadingAppear 0.3s ease-in 0s forwards;
+}
+
+@keyframes loadingAppear{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
 #hero {
   width: 100%;
   height: 420px;

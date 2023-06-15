@@ -1,14 +1,21 @@
 <app-header></app-header>
 <!-- ======= Hero Section ======= -->
+<div *ngIf="pantallaCarga" class="loading">
+    <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+        <div class="spinner-border text-light" role="status" style="width: 6rem; height: 6rem;">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+</div>
 <section id="hero">
     <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
         <h1 class="mb-4 pb-0">Registro </h1>
     </div>
 </section><!-- End Hero Section -->
 <!-- ======= Registro Section ======= -->
-<section id="registro" class="section-bg">
+<section id="registro" class="section-bg row">
 
-    <div class="container" data-aos="fade-up">
+    <div class="container col-5" data-aos="fade-up">
 
         <div class="form">
             <form class="php-email-form" [formGroup]="formularioRegistro" (ngSubmit)="enviarFormulario()"
@@ -75,8 +82,21 @@
                     </div>
                 </div>
 
+                <label for="name">Taller</label>
+                <select class="form-control" formControlName="taller" ng-model="taller_field">
+                    <option value="undefined" disabled selected>--Escoge un taller--</option>
+                    <ng-container *ngFor="let item of cursos">
+                        <option value="{{item.id}}">{{item.nombre}}</option>
+                    </ng-container>
+                </select>
+                <div *ngIf="enviadoIntentado && formularioRegistro.controls['taller'].invalid" class="error">
+                    <div *ngIf="formularioRegistro.get('taller')?.errors?.['required']">
+                        Escoge un taller.
+                    </div>
+                </div>
+
                 <label for="name">Foto</label>
-                <input type="file" class="form-control" accept="image/png, image/jpeg" (change)="onImageChanged($event)"
+                <input type="file" class="form-control" formControlName="foto" accept="image/png, image/jpeg" (change)="onImageChanged($event)"
                     required>
 
                 <label for="name">Referencia</label>
@@ -93,7 +113,7 @@
                     </div>
                 </div>
                 <label for="name">Comprobante de Pago</label>
-                <input type="file" class="form-control" accept="image/png, image/jpeg" (change)="onFileChanged($event)"
+                <input type="file" class="form-control" formControlName="comprobante_pago" accept=".pdf, image/png, image/jpeg" (change)="onFileChanged($event)"
                     required>
 
                 <div class="text-center mt-4">
