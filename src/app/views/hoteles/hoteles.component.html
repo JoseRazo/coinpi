@@ -14,14 +14,14 @@
                     <div class="hotel-img">
                         <img src="{{ hotel.imagen }}" alt="Hotel 1" class="img-fluid">
                     </div>
-                    <h3><a href="#" target="_blank">{{ hotel.nombre }}</a></h3>
-                    <div class="stars">
+                    <h3><a href="{{ hotel.url }}" target="_blank">{{ hotel.nombre }}</a></h3>
+                    <!-- <div class="stars">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
-                    </div>
-                    <p [innerHTML]="hotel.direccion"></p>
-                    <p><a href="{{ hotel.url }}"> Ir a sitio web</a></p>
+                    </div> -->
+                    <div [innerHTML]="hotel.direccion"></div>
+                    <p><a href="{{ hotel.url }}" target="_blank"> Ir a sitio web</a></p>
                 </div>
             </div>
         </div>
