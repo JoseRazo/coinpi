@@ -111,6 +111,8 @@ export class RegistroComponent implements OnInit {
             title: 'Éxito',
             text: '¡El formulario se ha enviado con éxito!\nEspere nuestra respuesta.',
             icon: 'success'
+          }).then((result) => {
+            location.reload();
           });
           this.pantallaCarga = false;
           this.formularioRegistro.reset();
