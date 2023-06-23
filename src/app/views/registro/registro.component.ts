@@ -15,7 +15,9 @@ export class RegistroComponent implements OnInit {
   cursos: Curso[];
 
   imagen?: File;
-  file?: File;
+  fileComprobantePago?: File;
+  fileFormatoInscripcion?: File;
+  fileAvisoPrivacidad?: File;
 
   formularioRegistro: FormGroup;
   enviadoIntentado: boolean = false;
@@ -37,6 +39,8 @@ export class RegistroComponent implements OnInit {
       taller: new FormControl('', [Validators.required]),
       referencia: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(145)]),
       comprobante_pago: new FormControl('', [Validators.required]),
+      formato_inscripcion: new FormControl('', [Validators.required]),
+      aviso_privacidad: new FormControl('', [Validators.required]),
     });
     this.loadScripts();
   }
@@ -74,8 +78,16 @@ export class RegistroComponent implements OnInit {
   onImageChanged(event: any) {
     this.imagen = event.target.files[0]
   }
-  onFileChanged(event: any) {
-    this.file = event.target.files[0]
+  onFileComprobantePagoChanged(event: any) {
+    this.fileComprobantePago = event.target.files[0]
+  }
+
+  onFileFormatoInscripcionChanged(event: any) {
+    this.fileFormatoInscripcion = event.target.files[0]
+  }
+
+  onFileAvisoPrivacidadChanged(event: any) {
+    this.fileAvisoPrivacidad = event.target.files[0]
   }
 
   enviarFormulario() {
@@ -101,7 +113,9 @@ export class RegistroComponent implements OnInit {
     // formData.append('foto', this.imagen!);
     formData.append('taller', this.formularioRegistro.get('taller')?.value);
     formData.append('referencia', this.formularioRegistro.get('referencia')?.value);
-    formData.append('comprobante_pago', this.file!);
+    formData.append('comprobante_pago', this.fileComprobantePago!);
+    formData.append('formato_inscripcion', this.fileFormatoInscripcion!);
+    formData.append('aviso_privacidad', this.fileAvisoPrivacidad!);
 
     this.http.post(url, formData)
       .subscribe(

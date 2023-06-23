@@ -19,7 +19,7 @@
 
         <div class="row">
             <div class="col-md-6">
-                <div id="proceso-registro">
+                <div id="proceso-registro" class="text-justify">
                     <h2>Proceso de Registro</h2>
                     <p>Es necesario realizar primero el pago de inscripción al congreso el cual tendrá que ser por medio
                         de transferencia
@@ -44,6 +44,84 @@
                     <p class="font-weight-bold">Concepto:
                         <span class="font-weight-normal">COINPI</span>
                     </p>
+                    <p class="font-weight-bold">Monto a pagar:</p>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Tipo de participante</th>
+                                <th scope="col">Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Estudiante UTYP</td>
+                                <td>$ 1250.00</td>
+                            </tr>
+                            <tr>
+                                <td>Docente - Directivo UTYP</td>
+                                <td>$ 2000.00</td>
+                            </tr>
+                            <tr>
+                                <td>Público General</td>
+                                <td>$ 2500.00</td>
+                            </tr>
+                            <tr>
+                                <td>Estudiantes Externos</td>
+                                <td>$ 1500.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>Es indispensable llenar los siguientes formatos y adjuntarlos a tu inscripción junto con tu
+                        comprobante de pago, los formatos son los siguientes:</p>
+                    <p>
+                        <a href="assets/content/registro/Formato de inscripción.pdf" class="btn btn-outline-primary"
+                            target="_blank">
+                            <i class="bi bi-download"></i>
+                            Formato de Inscripción
+                        </a>
+                    </p>
+                    <p>
+                        <a href="assets/content/registro/FDGE011 AVISO DE PRIVACIDAD INTEGRAL IECA IMPRIMIR-1-1.pdf"
+                            class="btn btn-outline-primary" target="_blank">
+                            <i class="bi bi-download"></i>
+                            Aviso de Privacidad Integral
+                        </a>
+                    </p>
+
+                    <p>
+                        <span class="font-weight-bold text-danger">Nota: </span>
+                        Para el caso de Universidad o Empresa con varios registros a la vez, sigue los siguientes pasos:
+                    <p>
+                    <ol>
+                        <li>Realiza en un solo pago la inscripción de todos los participantes.</li>
+                        <li>Realiza el llenado del formulario de registro y anexa el comprobante de pago del total de
+                            participantes, el formulario solicitará los formatos de un solo participante
+                            correspondientes a
+                            Inscripción y Aviso de Privacidad Integral del IECA, te sugerimos anexes solo los de la
+                            persona
+                            a cargo del grupo.</li>
+                        <li>
+                            Descarga el Formato de Registro COINPI 2023 y llenalo con los datos solicitados, excepto el
+                            de la
+                            persona
+                            que realiza el registro en el formulario.
+                            <p class="mt-2">
+                                <a href="assets/content/registro/FORMATO REGISTRO COINPI 2023.xlsx"
+                                    class="btn btn-outline-success" target="_blank">
+                                    <i class="bi bi-download"></i>
+                                    Formato de Registro COINPI 2023
+                                </a>
+                            </p>
+                        </li>
+                        <li>Descarga los formatos de Inscripción y Aviso de Privacidad Integral del IECA,
+                            y elabora uno por participante.</li>
+                        <li>Todos los formatos deberán ser enviados al correo electrónico
+                            coinpi.registro2023@utsalamanca.edu.mx, una vez cotejada la información se notificará a
+                            través del mismo correo.</li>
+                    </ol>
+
+
                 </div>
             </div>
             <div class="col-md-6">
@@ -187,6 +265,10 @@
 
                         <label for="referencia">Referencia <span class="text-danger">*</span></label>
                         <input type="text" class="form-control" formControlName="referencia" placeholder="Referencia">
+                        <p>
+                            <span class="font-weight-bold text-danger">Nota: </span>
+                            Esta debe ser la que arroja el banco emisor tras realizada la transferencia.
+                        <p>
                         <div *ngIf="enviadoIntentado && formularioRegistro.controls['referencia'].invalid"
                             class="error">
                             <div *ngIf="formularioRegistro.get('referencia')?.errors?.['required']">
@@ -199,13 +281,40 @@
                                 La referencia no debe exceder los 145 caracteres.
                             </div>
                         </div>
+
                         <label for="comprobante_pago">Comprobante de Pago <span class="text-danger">*</span></label>
                         <input type="file" class="form-control" formControlName="comprobante_pago"
-                            accept=".pdf, image/png, image/jpeg" (change)="onFileChanged($event)">
+                            accept=".pdf, image/png, image/jpeg" (change)="onFileComprobantePagoChanged($event)">
                         <div *ngIf="enviadoIntentado && formularioRegistro.controls['comprobante_pago'].invalid"
                             class="error">
                             <div *ngIf="formularioRegistro.get('comprobante_pago')?.errors?.['required']">
                                 El comprobante de pago es requerido.
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formato_inscripcion">Formato de Inscripción del IECA <span
+                                    class="text-danger">*</span></label>
+                            <input type="file" class="form-control" formControlName="formato_inscripcion" accept=".pdf"
+                                (change)="onFileFormatoInscripcionChanged($event)">
+                            <div *ngIf="enviadoIntentado && formularioRegistro.controls['formato_inscripcion'].invalid"
+                                class="error">
+                                <div *ngIf="formularioRegistro.get('formato_inscripcion')?.errors?.['required']">
+                                    El formato de inscripción es requerido.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="aviso_privacidad">Aviso de Privacidad Integral del IECA <span
+                                    class="text-danger">*</span></label>
+                            <input type="file" class="form-control" formControlName="aviso_privacidad" accept=".pdf"
+                                (change)="onFileAvisoPrivacidadChanged($event)">
+                            <div *ngIf="enviadoIntentado && formularioRegistro.controls['aviso_privacidad'].invalid"
+                                class="error">
+                                <div *ngIf="formularioRegistro.get('aviso_privacidad')?.errors?.['required']">
+                                    El aviso de privacidad es requerido.
+                                </div>
                             </div>
                         </div>
 

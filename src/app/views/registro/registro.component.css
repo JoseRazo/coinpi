@@ -147,3 +147,7 @@ p {
 label {
   margin-bottom: 7px;
 }
+
+.text-justify {
+  text-align: justify;
+}
