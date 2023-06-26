@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
 
@@ -32,8 +33,8 @@ export class ContactoComponent {
       return; // Si el formulario es inválido, se detiene el proceso de envío y se muestran los mensajes de error
     }
 
-    // const url = 'http://127.0.0.1:8001/api/enviar-formulario/';
-    const url = 'https://api.utsalamanca.edu.mx/api/enviar-formulario/';
+    const url = environment.apiUrl + "/enviar-formulario/";
+
     const formData = new FormData();
     formData.append('nombre', this.formularioContacto.get('nombre')?.value);
     formData.append('email', this.formularioContacto.get('email')?.value);

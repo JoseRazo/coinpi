@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, FormControl, Validators, AbstractControl } from
 import Swal from 'sweetalert2';
 import { CursosService } from 'src/app/services/cursos/cursos.service';
 import { Curso } from 'src/app/services/cursos/cursos.interfaces';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-registro',
@@ -99,8 +100,8 @@ export class RegistroComponent implements OnInit {
       return; // Si el formulario es inválido, se detiene el proceso de envío y se muestran los mensajes de error
     }
 
-    const url = 'http://127.0.0.1:8001/api/registro/';
-    // const url = 'https://api.utsalamanca.edu.mx/api/enviar-formulario/';
+    const url = environment.apiUrl + "/registro/";
+    
     const formData = new FormData();
     formData.append('nombre', this.formularioRegistro.get('nombre')?.value);
     formData.append('apellido_paterno', this.formularioRegistro.get('apellido_paterno')?.value);
