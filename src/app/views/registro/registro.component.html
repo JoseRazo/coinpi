@@ -22,8 +22,7 @@
                 <div id="proceso-registro" class="text-justify">
                     <h2>Proceso de Registro</h2>
                     <p>Es necesario realizar primero el pago de inscripción al congreso el cual tendrá que ser por medio
-                        de transferencia
-                        bancaria, posteriormente deberas realizar tu proceso de registro.</p>
+                        de transferencia bancaria, posteriormente deberás realizar tu proceso de registro.</p>
                     <p>Los datos bancarios que deben de proporcionar para realizar la transferencia son los siguientes:
                     </p>
 
@@ -44,6 +43,13 @@
                     <p class="font-weight-bold">Concepto:
                         <span class="font-weight-normal">COINPI</span>
                     </p>
+
+                    <p>
+                        <span class="font-weight-bold text-danger">Nota: </span>
+                        Si tu aplicación te requiere una referencia déjala en blanco, esta se genera de manera
+                        automática.
+                    <p>
+
                     <p class="font-weight-bold">Monto a pagar:</p>
                     <table class="table table-bordered">
                         <thead>
@@ -54,11 +60,11 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Estudiante UTYP</td>
+                                <td>Estudiante UTyP</td>
                                 <td>$ 1250.00</td>
                             </tr>
                             <tr>
-                                <td>Docente - Directivo UTYP</td>
+                                <td>Docente - Directivo UTyP</td>
                                 <td>$ 2000.00</td>
                             </tr>
                             <tr>
@@ -72,22 +78,23 @@
                         </tbody>
                     </table>
 
-                    <p>Es indispensable llenar los siguientes formatos y adjuntarlos a tu inscripción junto con tu
-                        comprobante de pago, los formatos son los siguientes:</p>
+                    <p>Es indispensable llenar y firmar el siguiente Formato de Inscripción y Aviso de Privacidad y
+                        adjuntarlo a tu inscripción
+                        junto con tu comprobante de pago:</p>
                     <p>
-                        <a href="assets/content/registro/Formato de inscripción.pdf" class="btn btn-outline-primary"
-                            target="_blank">
+                        <a href="assets/content/registro/Formato de Inscripción y Aviso de Privacidad.pdf"
+                            class="btn btn-outline-primary" target="_blank">
                             <i class="bi bi-download"></i>
-                            Formato de Inscripción
+                            Formato de Inscripción y Aviso de Privacidad
                         </a>
                     </p>
-                    <p>
+                    <!-- <p>
                         <a href="assets/content/registro/FDGE011 AVISO DE PRIVACIDAD INTEGRAL IECA IMPRIMIR-1-1.pdf"
                             class="btn btn-outline-primary" target="_blank">
                             <i class="bi bi-download"></i>
                             Aviso de Privacidad Integral
                         </a>
-                    </p>
+                    </p> -->
 
                     <p>
                         <span class="font-weight-bold text-danger">Nota: </span>
@@ -96,32 +103,30 @@
                     <ol>
                         <li>Realiza en un solo pago la inscripción de todos los participantes.</li>
                         <li>Realiza el llenado del formulario de registro y anexa el comprobante de pago del total de
-                            participantes, el formulario solicitará los formatos de un solo participante
-                            correspondientes a
-                            Inscripción y Aviso de Privacidad Integral del IECA, te sugerimos anexes solo los de la
-                            persona
-                            a cargo del grupo.</li>
+                            participantes, el formulario solicitará el formato de un solo participante correspondiente a
+                            Formato de Inscripción y Aviso de Privacidad, te sugerimos anexes solo el de la persona a
+                            cargo del
+                            grupo.</li>
                         <li>
-                            Descarga el Formato de Registro COINPI 2023 y llenalo con los datos solicitados, excepto el
+                            Descarga el Formato de Registro Masivo COINPI 2023 y llénalo con los datos solicitados,
+                            excepto el
                             de la
                             persona
                             que realiza el registro en el formulario.
                             <p class="mt-2">
-                                <a href="assets/content/registro/FORMATO REGISTRO COINPI 2023.xlsx"
+                                <a href="assets/content/registro/Formato de Registro Masivo COINPI 2023.xlsx"
                                     class="btn btn-outline-success" target="_blank">
                                     <i class="bi bi-download"></i>
-                                    Formato de Registro COINPI 2023
+                                    Formato de Registro Masivo COINPI 2023
                                 </a>
                             </p>
                         </li>
-                        <li>Descarga los formatos de Inscripción y Aviso de Privacidad Integral del IECA,
+                        <li>Descarga el Formato de Inscripción y Aviso de Privacidad,
                             y elabora uno por participante.</li>
                         <li>Todos los formatos deberán ser enviados al correo electrónico
                             coinpi.registro2023@utsalamanca.edu.mx, una vez cotejada la información se notificará a
                             través del mismo correo.</li>
                     </ol>
-
-
                 </div>
             </div>
             <div class="col-md-6">
@@ -130,88 +135,102 @@
                     <form class="php-email-form" [formGroup]="formularioRegistro" (ngSubmit)="enviarFormulario()"
                         enctype="multipart/form-data">
 
-                        <label for="nombre" style="margin-top: 0px;">Nombre <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
-                        <div *ngIf="enviadoIntentado && formularioRegistro.controls['nombre'].invalid" class="error">
-                            <div *ngIf="formularioRegistro.get('nombre')?.errors?.['required']">
-                                El nombre es requerido.
-                            </div>
-                            <div *ngIf="formularioRegistro.get('nombre')?.errors?.['minlength']">
-                                El nombre debe tener al menos 4 caracteres.
-                            </div>
-                            <div *ngIf="formularioRegistro.get('nombre')?.errors?.['maxlength']">
-                                El nombre no debe exceder los 145 caracteres.
-                            </div>
-                        </div>
-
-
-                        <label for="apellido_paterno">Apellido Paterno <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" formControlName="apellido_paterno"
-                            placeholder="Apellido Paterno">
-                        <div *ngIf="enviadoIntentado && formularioRegistro.controls['apellido_paterno'].invalid"
-                            class="error">
-                            <div *ngIf="formularioRegistro.get('apellido_paterno')?.errors?.['required']">
-                                El apellido paterno es requerido.
-                            </div>
-                            <div *ngIf="formularioRegistro.get('apellido_paterno')?.errors?.['maxlength']">
-                                El apellido paterno no debe exceder los 145 caracteres.
+                        <div class="form-group">
+                            <label for="nombre" style="margin-top: 0px;">Nombre <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
+                            <div *ngIf="enviadoIntentado && formularioRegistro.controls['nombre'].invalid"
+                                class="error">
+                                <div *ngIf="formularioRegistro.get('nombre')?.errors?.['required']">
+                                    El nombre es requerido.
+                                </div>
+                                <div *ngIf="formularioRegistro.get('nombre')?.errors?.['minlength']">
+                                    El nombre debe tener al menos 4 caracteres.
+                                </div>
+                                <div *ngIf="formularioRegistro.get('nombre')?.errors?.['maxlength']">
+                                    El nombre no debe exceder los 145 caracteres.
+                                </div>
                             </div>
                         </div>
 
-                        <label for="apellido_materno">Apellido Materno <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" formControlName="apellido_materno"
-                            placeholder="Apellido Materno">
-                        <div *ngIf="enviadoIntentado && formularioRegistro.controls['apellido_materno'].invalid"
-                            class="error">
-                            <div *ngIf="formularioRegistro.get('apellido_materno')?.errors?.['required']">
-                                El apellido materno es requerido.
-                            </div>
-                            <div *ngIf="formularioRegistro.get('apellido_materno')?.errors?.['maxlength']">
-                                El apellido materno no debe exceder los 145 caracteres.
-                            </div>
-                        </div>
-
-                        <label for="email">Email <span class="text-danger">*</span></label>
-                        <input type="email" class="form-control" formControlName="email" placeholder="Email">
-                        <div *ngIf="enviadoIntentado && formularioRegistro.controls['email'].invalid" class="error">
-                            <div *ngIf="formularioRegistro.get('email')?.errors?.['required']">
-                                El email es requerido.
-                            </div>
-                            <div *ngIf="formularioRegistro.get('email')?.errors?.['email']">
-                                Ingresa una dirección de correo válida.
+                        <div class="form-group">
+                            <label for="apellido_paterno">Apellido Paterno <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" formControlName="apellido_paterno"
+                                placeholder="Apellido Paterno">
+                            <div *ngIf="enviadoIntentado && formularioRegistro.controls['apellido_paterno'].invalid"
+                                class="error">
+                                <div *ngIf="formularioRegistro.get('apellido_paterno')?.errors?.['required']">
+                                    El apellido paterno es requerido.
+                                </div>
+                                <div *ngIf="formularioRegistro.get('apellido_paterno')?.errors?.['maxlength']">
+                                    El apellido paterno no debe exceder los 145 caracteres.
+                                </div>
                             </div>
                         </div>
 
-                        <label for="tipo_participante">Tipo de participante <span class="text-danger">*</span></label>
-                        <select class="form-control" formControlName="tipo_participante"
-                            (change)="tipoParticipanteChanged()">
-                            <option value="" disabled selected>Selecciona una opción...</option>
-                            <option value="estudiante_utyp">Estudiante UTyP</option>
-                            <option value="docente_directivo_utyp">Docente - Directivo UTyP</option>
-                            <option value="publico_general">Público General</option>
-                            <option value="estudiantes_externos">Estudiantes Externos</option>
-                        </select>
-                        <div *ngIf="enviadoIntentado && formularioRegistro.controls['tipo_participante'].invalid"
-                            class="error">
-                            <div *ngIf="formularioRegistro.get('tipo_participante')?.errors?.['required']">
-                                El tipo de participante es requerido.
+                        <div class="form-group">
+                            <label for="apellido_materno">Apellido Materno <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" formControlName="apellido_materno"
+                                placeholder="Apellido Materno">
+                            <div *ngIf="enviadoIntentado && formularioRegistro.controls['apellido_materno'].invalid"
+                                class="error">
+                                <div *ngIf="formularioRegistro.get('apellido_materno')?.errors?.['required']">
+                                    El apellido materno es requerido.
+                                </div>
+                                <div *ngIf="formularioRegistro.get('apellido_materno')?.errors?.['maxlength']">
+                                    El apellido materno no debe exceder los 145 caracteres.
+                                </div>
                             </div>
                         </div>
 
-                        <label for="universidad_empresa">Universidad o Empresa <span
-                                class="text-danger">*</span></label>
-                        <input type="text" class="form-control" formControlName="universidad_empresa"
-                            placeholder="Universidad o Empresa">
-                        <div *ngIf="enviadoIntentado && formularioRegistro.controls['universidad_empresa'].invalid"
-                            class="error">
-                            <div *ngIf="formularioRegistro.get('universidad_empresa')?.errors?.['required']">
-                                La universidad o empresa es requerida.
+                        <div class="form-group">
+                            <label for="email">Email <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                            <div *ngIf="enviadoIntentado && formularioRegistro.controls['email'].invalid" class="error">
+                                <div *ngIf="formularioRegistro.get('email')?.errors?.['required']">
+                                    El email es requerido.
+                                </div>
+                                <div *ngIf="formularioRegistro.get('email')?.errors?.['email']">
+                                    Ingresa una dirección de correo válida.
+                                </div>
                             </div>
-                            <div *ngIf="formularioRegistro.get('universidad_empresa')?.errors?.['minlength']">
-                                La universidad o empresa debe tener al menos 3 caracteres.
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tipo_participante">Tipo de participante <span
+                                    class="text-danger">*</span></label>
+                            <select class="form-control" formControlName="tipo_participante"
+                                (change)="tipoParticipanteChanged()">
+                                <option value="" disabled selected>Selecciona una opción...</option>
+                                <option value="estudiante_utyp">Estudiante UTyP</option>
+                                <option value="docente_directivo_utyp">Docente - Directivo UTyP</option>
+                                <option value="publico_general">Público General</option>
+                                <option value="estudiantes_externos">Estudiantes Externos</option>
+                            </select>
+                            <div *ngIf="enviadoIntentado && formularioRegistro.controls['tipo_participante'].invalid"
+                                class="error">
+                                <div *ngIf="formularioRegistro.get('tipo_participante')?.errors?.['required']">
+                                    El tipo de participante es requerido.
+                                </div>
                             </div>
-                            <div *ngIf="formularioRegistro.get('universidad_empresa')?.errors?.['maxlength']">
-                                La universidad o empresa no debe exceder los 145 caracteres.
+                        </div>
+
+                        <div class="form-group">
+                            <label for="universidad_empresa">Universidad o Empresa <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" formControlName="universidad_empresa"
+                                placeholder="Universidad o Empresa">
+                            <div *ngIf="enviadoIntentado && formularioRegistro.controls['universidad_empresa'].invalid"
+                                class="error">
+                                <div *ngIf="formularioRegistro.get('universidad_empresa')?.errors?.['required']">
+                                    La universidad o empresa es requerida.
+                                </div>
+                                <div *ngIf="formularioRegistro.get('universidad_empresa')?.errors?.['minlength']">
+                                    La universidad o empresa debe tener al menos 3 caracteres.
+                                </div>
+                                <div *ngIf="formularioRegistro.get('universidad_empresa')?.errors?.['maxlength']">
+                                    La universidad o empresa no debe exceder los 145 caracteres.
+                                </div>
                             </div>
                         </div>
 
@@ -240,60 +259,110 @@
                             </div>
                         </div>
 
-                        <label for="taller">Taller <span class="text-danger">*</span></label>
-                        <select class="form-control" formControlName="taller" ng-model="taller_field">
-                            <option value="" disabled selected>Selecciona una opción...</option>
-                            <ng-container *ngFor="let item of cursos">
-                                <option value="{{item.id}}">{{item.nombre}}</option>
-                            </ng-container>
-                        </select>
-                        <div *ngIf="enviadoIntentado && formularioRegistro.controls['taller'].invalid" class="error">
-                            <div *ngIf="formularioRegistro.get('taller')?.errors?.['required']">
-                                El taller es requerido.
-                            </div>
-                        </div>
-
-                        <!-- <label for="name">Fotografía <span class="text-danger">*</span></label>
-                        <input type="file" class="form-control" formControlName="foto" accept="image/png, image/jpeg"
-                            (change)="onImageChanged($event)">
-                        <small>El tamaño recomendado de la fotografía es de 640 x 480 pixeles.</small><br>
-                        <div *ngIf="enviadoIntentado && formularioRegistro.controls['foto'].invalid" class="error">
-                            <div *ngIf="formularioRegistro.get('foto')?.errors?.['required']">
-                                La fotografía es requerida.
-                            </div>
-                        </div> -->
-
-                        <label for="referencia">Referencia <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" formControlName="referencia" placeholder="Referencia">
-                        <p>
-                            <span class="font-weight-bold text-danger">Nota: </span>
-                            Esta debe ser la que arroja el banco emisor tras realizada la transferencia.
-                        <p>
-                        <div *ngIf="enviadoIntentado && formularioRegistro.controls['referencia'].invalid"
-                            class="error">
-                            <div *ngIf="formularioRegistro.get('referencia')?.errors?.['required']">
-                                La referencia es requerida.
-                            </div>
-                            <div *ngIf="formularioRegistro.get('referencia')?.errors?.['minlength']">
-                                La referencia debe tener al menos 4 caracteres.
-                            </div>
-                            <div *ngIf="formularioRegistro.get('referencia')?.errors?.['maxlength']">
-                                La referencia no debe exceder los 145 caracteres.
-                            </div>
-                        </div>
-
-                        <label for="comprobante_pago">Comprobante de Pago <span class="text-danger">*</span></label>
-                        <input type="file" class="form-control" formControlName="comprobante_pago"
-                            accept=".pdf, image/png, image/jpeg" (change)="onFileComprobantePagoChanged($event)">
-                        <div *ngIf="enviadoIntentado && formularioRegistro.controls['comprobante_pago'].invalid"
-                            class="error">
-                            <div *ngIf="formularioRegistro.get('comprobante_pago')?.errors?.['required']">
-                                El comprobante de pago es requerido.
+                        <div class="form-group">
+                            <label for="taller">Taller <span class="text-danger">*</span></label>
+                            <select class="form-control" formControlName="taller" ng-model="taller_field">
+                                <option value="" disabled selected>Selecciona una opción...</option>
+                                <ng-container *ngFor="let item of cursos">
+                                    <option value="{{item.id}}">{{item.nombre}}</option>
+                                </ng-container>
+                            </select>
+                            <div *ngIf="enviadoIntentado && formularioRegistro.controls['taller'].invalid"
+                                class="error">
+                                <div *ngIf="formularioRegistro.get('taller')?.errors?.['required']">
+                                    El taller es requerido.
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="formato_inscripcion">Formato de Inscripción del IECA <span
+                            <label for="dia_taller">Día de ingreso al taller <span class="text-danger">*</span></label>
+                            <select class="form-control" formControlName="dia_taller">
+                                <option value="" disabled selected>Selecciona una opción...</option>
+                                <option value="jueves">Jueves</option>
+                                <option value="viernes">Viernes</option>
+                            </select>
+                            <div *ngIf="enviadoIntentado && formularioRegistro.controls['dia_taller'].invalid"
+                                class="error">
+                                <div *ngIf="formularioRegistro.get('dia_taller')?.errors?.['required']">
+                                    El día de ingreso al taller es requerido.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="visita_industrial">Visita industrial <span class="text-danger">*</span></label>
+                            <select class="form-control" formControlName="visita_industrial"
+                                ng-model="visita_industrial_field">
+                                <option value="" disabled selected>Selecciona una opción...</option>
+                                <ng-container *ngFor="let item of empresas">
+                                    <option value="{{item.id}}" *ngIf="item.visita_industrial === true">{{item.nombre}}
+                                    </option>
+                                </ng-container>
+                            </select>
+                            <div *ngIf="enviadoIntentado && formularioRegistro.controls['visita_industrial'].invalid"
+                                class="error">
+                                <div *ngIf="formularioRegistro.get('visita_industrial')?.errors?.['required']">
+                                    El campo visita industrial es requerido.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dia_visita">Día visita industrial <span class="text-danger">*</span></label>
+                            <select class="form-control" formControlName="dia_visita">
+                                <option value="" disabled selected>Selecciona una opción...</option>
+                                <option value="jueves" disabled>Jueves</option>
+                                <option value="viernes" disabled>Viernes</option>
+                            </select>
+                            <p><small>Este campo se completa automáticamente al seleccionar el día de ingreso al taller.
+                                    Debido a que el día de la visita industrial no puede ser el mismo que el día de
+                                    ingreso al taller.</small></p>
+                            <div *ngIf="enviadoIntentado && formularioRegistro.controls['dia_visita'].invalid"
+                                class="error">
+                                <div *ngIf="formularioRegistro.get('dia_visita')?.errors?.['required']">
+                                    El día de la visita industrial es requerido.
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="referencia">Referencia <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" formControlName="referencia"
+                                placeholder="Referencia">
+                            <p>
+                                <span class="font-weight-bold text-danger">Nota: </span>
+                                Esta debe ser la que arroja el banco emisor tras realizada la transferencia.
+                            <p>
+                            <div *ngIf="enviadoIntentado && formularioRegistro.controls['referencia'].invalid"
+                                class="error">
+                                <div *ngIf="formularioRegistro.get('referencia')?.errors?.['required']">
+                                    La referencia es requerida.
+                                </div>
+                                <div *ngIf="formularioRegistro.get('referencia')?.errors?.['minlength']">
+                                    La referencia debe tener al menos 4 caracteres.
+                                </div>
+                                <div *ngIf="formularioRegistro.get('referencia')?.errors?.['maxlength']">
+                                    La referencia no debe exceder los 145 caracteres.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comprobante_pago">Comprobante de Pago <span class="text-danger">*</span></label>
+                            <input type="file" class="form-control" formControlName="comprobante_pago"
+                                accept=".pdf, image/png, image/jpeg" (change)="onFileComprobantePagoChanged($event)">
+                            <div *ngIf="enviadoIntentado && formularioRegistro.controls['comprobante_pago'].invalid"
+                                class="error">
+                                <div *ngIf="formularioRegistro.get('comprobante_pago')?.errors?.['required']">
+                                    El comprobante de pago es requerido.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formato_inscripcion">Formato de Inscripción y Aviso de Privacidad <span
                                     class="text-danger">*</span></label>
                             <input type="file" class="form-control" formControlName="formato_inscripcion" accept=".pdf"
                                 (change)="onFileFormatoInscripcionChanged($event)">
@@ -301,19 +370,6 @@
                                 class="error">
                                 <div *ngIf="formularioRegistro.get('formato_inscripcion')?.errors?.['required']">
                                     El formato de inscripción es requerido.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="aviso_privacidad">Aviso de Privacidad Integral del IECA <span
-                                    class="text-danger">*</span></label>
-                            <input type="file" class="form-control" formControlName="aviso_privacidad" accept=".pdf"
-                                (change)="onFileAvisoPrivacidadChanged($event)">
-                            <div *ngIf="enviadoIntentado && formularioRegistro.controls['aviso_privacidad'].invalid"
-                                class="error">
-                                <div *ngIf="formularioRegistro.get('aviso_privacidad')?.errors?.['required']">
-                                    El aviso de privacidad es requerido.
                                 </div>
                             </div>
                         </div>

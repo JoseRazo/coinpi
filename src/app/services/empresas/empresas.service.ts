@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Patrocinador } from './patrocinador.interfaces';
+import { Empresa } from './empresa.interfaces';
 import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
-
-export class PatrocinadoresService {
+export class EmpresasService {
 
   private apiUrl = environment.apiUrl;
 
@@ -21,7 +21,7 @@ export class PatrocinadoresService {
 
   constructor(private http: HttpClient) { }
 
-  getPatrocinadores(): Observable<Patrocinador[]>{
-    return this.http.get<Patrocinador[]>(this.apiUrl + "/patrocinadores");
+  getEmpresas(): Observable<Empresa[]>{
+    return this.http.get<Empresa[]>(this.apiUrl + "/empresas");
   }
 }

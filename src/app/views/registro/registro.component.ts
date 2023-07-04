@@ -4,6 +4,8 @@ import { FormGroup, FormBuilder, FormControl, Validators, AbstractControl } from
 import Swal from 'sweetalert2';
 import { CursosService } from 'src/app/services/cursos/cursos.service';
 import { Curso } from 'src/app/services/cursos/cursos.interfaces';
+import { EmpresasService } from 'src/app/services/empresas/empresas.service';
+import { Empresa } from 'src/app/services/empresas/empresa.interfaces';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -14,18 +16,24 @@ import { environment } from 'src/environments/environment';
 
 export class RegistroComponent implements OnInit {
   cursos: Curso[];
+  empresas: Empresa[];
 
   imagen?: File;
   fileComprobantePago?: File;
   fileFormatoInscripcion?: File;
-  fileAvisoPrivacidad?: File;
 
   formularioRegistro: FormGroup;
   enviadoIntentado: boolean = false;
   pantallaCarga: boolean = false; // Propiedad para controlar si se ha intentado enviar el formulario
+  diaVisitaDisabled: boolean = true;
 
-  constructor(private http: HttpClient, private cursosService: CursosService) {
+  constructor(
+    private http: HttpClient,
+    private cursosService: CursosService,
+    private empresasService: EmpresasService
+  ) {
     this.cursos = [];
+    this.empresas = [];
 
     this.formularioRegistro = new FormGroup({
       nombre: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(145)]),
@@ -38,18 +46,43 @@ export class RegistroComponent implements OnInit {
       numero_empleado: new FormControl('', []),
       // foto: new FormControl('', [Validators.required]),
       taller: new FormControl('', [Validators.required]),
+      dia_taller: new FormControl('', [Validators.required]),
+      visita_industrial: new FormControl('', [Validators.required]),
+      dia_visita: new FormControl('', [Validators.required]),
       referencia: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(145)]),
       comprobante_pago: new FormControl('', [Validators.required]),
       formato_inscripcion: new FormControl('', [Validators.required]),
-      aviso_privacidad: new FormControl('', [Validators.required]),
     });
     this.loadScripts();
   }
 
   ngOnInit() {
+    this.formularioRegistro.get('dia_taller')?.valueChanges.subscribe((selectedValue) => {
+      const diaVisitaControl = this.formularioRegistro.get('dia_visita');
+
+      if (selectedValue === 'jueves') {
+        diaVisitaControl?.setValue('viernes');
+      } else if (selectedValue === 'viernes') {
+        diaVisitaControl?.setValue('jueves');
+      } else {
+        diaVisitaControl?.setValue('');
+      }
+
+    });
+
     this.cursosService.getCursos().subscribe(
       (data: Curso[]) => {
         this.cursos = data;
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    );
+
+    this.empresasService.getEmpresas().subscribe(
+      (data: Empresa[]) => {
+        this.empresas = data;
+        console.log(data);
       },
       (error: any) => {
         console.log(error);
@@ -87,10 +120,6 @@ export class RegistroComponent implements OnInit {
     this.fileFormatoInscripcion = event.target.files[0]
   }
 
-  onFileAvisoPrivacidadChanged(event: any) {
-    this.fileAvisoPrivacidad = event.target.files[0]
-  }
-
   enviarFormulario() {
     this.enviadoIntentado = true;
     this.pantallaCarga = true;  // Se establece como verdadero cuando se hace clic en el botón enviar
@@ -101,7 +130,7 @@ export class RegistroComponent implements OnInit {
     }
 
     const url = environment.apiUrl + "/registro/";
-    
+
     const formData = new FormData();
     formData.append('nombre', this.formularioRegistro.get('nombre')?.value);
     formData.append('apellido_paterno', this.formularioRegistro.get('apellido_paterno')?.value);
@@ -113,10 +142,12 @@ export class RegistroComponent implements OnInit {
     formData.append('numero_empleado', this.formularioRegistro.get('numero_empleado')?.value);
     // formData.append('foto', this.imagen!);
     formData.append('taller', this.formularioRegistro.get('taller')?.value);
+    formData.append('dia_taller', this.formularioRegistro.get('dia_taller')?.value);
+    formData.append('visita_industrial', this.formularioRegistro.get('visita_industrial')?.value);
+    formData.append('dia_visita', this.formularioRegistro.get('dia_visita')?.value);
     formData.append('referencia', this.formularioRegistro.get('referencia')?.value);
     formData.append('comprobante_pago', this.fileComprobantePago!);
     formData.append('formato_inscripcion', this.fileFormatoInscripcion!);
-    formData.append('aviso_privacidad', this.fileAvisoPrivacidad!);
 
     this.http.post(url, formData)
       .subscribe(
