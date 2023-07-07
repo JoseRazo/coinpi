@@ -21,6 +21,7 @@ import { ArticulosCartelesComponent } from './articulos-carteles/articulos-carte
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegistroComponent } from './views/registro/registro.component';
+import { EventoCulturalComponent } from './views/evento-cultural/evento-cultural.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { RegistroComponent } from './views/registro/registro.component';
     AcercaDeComponent,
     RegistroComponent,
     ArticulosCartelesComponent,
+    EventoCulturalComponent,
   ],
   imports: [
     HttpClientModule,
