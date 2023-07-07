@@ -1068,6 +1068,48 @@ h6 {
 }
 
 /*--------------------------------------------------------------
+#  Seccion Evento Cultural
+--------------------------------------------------------------*/
+#evento-cultural {
+  padding: 60px 0;
+}
+
+#evento-cultural .eventos-culturales {
+  border: 1px solid #e0e5fa;
+  background: #fff;
+  margin-bottom: 30px;
+}
+
+#evento-cultural .evento-cultural-img {
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+
+#evento-cultural h3 {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 5px;
+  padding: 0 20px;
+}
+
+#evento-cultural a {
+  color: #f82249;
+}
+
+#evento-cultural a:hover {
+  color: #152b79;
+}
+
+
+#evento-cultural p {
+  padding: 0 20px;
+  margin-bottom: 20px;
+  color: #060c22;
+  font-style: italic;
+  font-size: 15px;
+}
+/*--------------------------------------------------------------
 # Gallery Section
 --------------------------------------------------------------*/
 #gallery {
