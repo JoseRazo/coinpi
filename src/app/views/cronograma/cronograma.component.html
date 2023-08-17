@@ -43,9 +43,11 @@
                             <div class="speaker">
                                 <img src="{{item.curso?.instructor?.fotografia}}" alt="">
                             </div>
-                            <h4>{{item.otra_actividad}}</h4>
                             <h4>{{item.curso?.nombre}}</h4>
-                            <h4>{{item.empresa?.nombre}}</h4>
+                            <p>
+                                <strong>Instructor: </strong>
+                                <span>{{item.curso?.instructor?.nombre}}</span>
+                            </p>
                             <p [innerHTML]="item.curso?.objetivo"></p>
                         </div>
                     </div>
@@ -53,7 +55,8 @@
 
                 <h3 class="mt-4">Visitas Industriales</h3>
                 <ng-container *ngFor="let item of cronogramas">
-                    <div class="row schedule-item" *ngIf="item.dia === 1 && item.tipo_actividad === 'visitas_industriales'">
+                    <div class="row schedule-item"
+                        *ngIf="item.dia === 1 && item.tipo_actividad === 'visitas_industriales'">
                         <div class="col-md-2"><time>{{item.hora_inicio}} a {{item.hora_fin}}</time></div>
                         <div class="col-md-10">
                             <div class="speaker">
@@ -94,9 +97,11 @@
                             <div class="speaker">
                                 <img src="{{item.curso?.instructor?.fotografia}}" alt="">
                             </div>
-                            <h4>{{item.otra_actividad}}</h4>
                             <h4>{{item.curso?.nombre}}</h4>
-                            <h4>{{item.empresa?.nombre}}</h4>
+                            <p>
+                                <strong>Instructor: </strong>
+                                <span>{{item.curso?.instructor?.nombre}}</span>
+                            </p>
                             <p [innerHTML]="item.curso?.objetivo"></p>
                         </div>
                     </div>
@@ -104,7 +109,8 @@
 
                 <h3 class="mt-4">Visitas Industriales</h3>
                 <ng-container *ngFor="let item of cronogramas">
-                    <div class="row schedule-item" *ngIf="item.dia === 2 && item.tipo_actividad === 'visitas_industriales'">
+                    <div class="row schedule-item"
+                        *ngIf="item.dia === 2 && item.tipo_actividad === 'visitas_industriales'">
                         <div class="col-md-2"><time>{{item.hora_inicio}} a {{item.hora_fin}}</time></div>
                         <div class="col-md-10">
                             <div class="speaker">
