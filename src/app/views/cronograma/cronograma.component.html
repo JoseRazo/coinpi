@@ -29,8 +29,9 @@
                             </div>
                             <h4>{{item.otra_actividad}}</h4>
                             <h4>{{item.curso?.nombre}}</h4>
-                            <h4>{{item.empresa?.nombre}}</h4>
-                            <p [innerHTML]="item.curso?.objetivo"></p>
+                            <p>
+                                <strong>{{item.curso?.instructor?.nombre}}</strong>
+                            </p>
                         </div>
                     </div>
                 </ng-container>
@@ -62,10 +63,7 @@
                             <div class="speaker">
                                 <img src="{{item.curso?.instructor?.fotografia}}" alt="">
                             </div>
-                            <h4>{{item.otra_actividad}}</h4>
-                            <h4>{{item.curso?.nombre}}</h4>
                             <h4>{{item.empresa?.nombre}}</h4>
-                            <p [innerHTML]="item.curso?.objetivo"></p>
                         </div>
                     </div>
                 </ng-container>
@@ -83,8 +81,9 @@
                             </div>
                             <h4>{{item.otra_actividad}}</h4>
                             <h4>{{item.curso?.nombre}}</h4>
-                            <h4>{{item.empresa?.nombre}}</h4>
-                            <p [innerHTML]="item.curso?.objetivo"></p>
+                            <p>
+                                <strong>{{item.curso?.instructor?.nombre}}</strong>
+                            </p>
                         </div>
                     </div>
                 </ng-container>
@@ -116,10 +115,7 @@
                             <div class="speaker">
                                 <img src="{{item.curso?.instructor?.fotografia}}" alt="">
                             </div>
-                            <h4>{{item.otra_actividad}}</h4>
-                            <h4>{{item.curso?.nombre}}</h4>
                             <h4>{{item.empresa?.nombre}}</h4>
-                            <p [innerHTML]="item.curso?.objetivo"></p>
                         </div>
                     </div>
                 </ng-container>
