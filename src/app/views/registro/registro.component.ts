@@ -47,8 +47,8 @@ export class RegistroComponent implements OnInit {
       // foto: new FormControl('', [Validators.required]),
       taller: new FormControl('', [Validators.required]),
       dia_taller: new FormControl('', [Validators.required]),
-      visita_industrial: new FormControl('', [Validators.required]),
-      dia_visita: new FormControl('', [Validators.required]),
+      // visita_industrial: new FormControl('', [Validators.required]),
+      // dia_visita: new FormControl('', [Validators.required]),
       referencia: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(145)]),
       comprobante_pago: new FormControl('', [Validators.required]),
       formato_inscripcion: new FormControl('', [Validators.required]),
@@ -57,18 +57,18 @@ export class RegistroComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.formularioRegistro.get('dia_taller')?.valueChanges.subscribe((selectedValue) => {
-      const diaVisitaControl = this.formularioRegistro.get('dia_visita');
+    // this.formularioRegistro.get('dia_taller')?.valueChanges.subscribe((selectedValue) => {
+    //   const diaVisitaControl = this.formularioRegistro.get('dia_visita');
 
-      if (selectedValue === 'jueves') {
-        diaVisitaControl?.setValue('viernes');
-      } else if (selectedValue === 'viernes') {
-        diaVisitaControl?.setValue('jueves');
-      } else {
-        diaVisitaControl?.setValue('');
-      }
+    //   if (selectedValue === 'jueves') {
+    //     diaVisitaControl?.setValue('viernes');
+    //   } else if (selectedValue === 'viernes') {
+    //     diaVisitaControl?.setValue('jueves');
+    //   } else {
+    //     diaVisitaControl?.setValue('');
+    //   }
 
-    });
+    // });
 
     this.cursosService.getCursos().subscribe(
       (data: Curso[]) => {
@@ -143,8 +143,8 @@ export class RegistroComponent implements OnInit {
     // formData.append('foto', this.imagen!);
     formData.append('taller', this.formularioRegistro.get('taller')?.value);
     formData.append('dia_taller', this.formularioRegistro.get('dia_taller')?.value);
-    formData.append('visita_industrial', this.formularioRegistro.get('visita_industrial')?.value);
-    formData.append('dia_visita', this.formularioRegistro.get('dia_visita')?.value);
+    // formData.append('visita_industrial', this.formularioRegistro.get('visita_industrial')?.value);
+    // formData.append('dia_visita', this.formularioRegistro.get('dia_visita')?.value);
     formData.append('referencia', this.formularioRegistro.get('referencia')?.value);
     formData.append('comprobante_pago', this.fileComprobantePago!);
     formData.append('formato_inscripcion', this.fileFormatoInscripcion!);
