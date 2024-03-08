@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>COINPI 2023</title>
@@ -10,7 +11,8 @@
   <link rel="apple-touch-icon" href="assets/img/logouts.png">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -22,19 +24,79 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
+
 <body>
   <app-root></app-root>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-  
-    <!-- El archivo assets/js/main.js se carga en app.module.ts 
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl" id="waitDialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">¿Cómo puedo obtener mi constancia?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h2 class="mb-4">CONSTANCIAS IECA</h2>
+          <p>Para la obtención de las constancias emitidas por el IECA a través del congreso COIMPI 2023 seguir las
+            indicaciones mostradas a continuación:</p>
+          <ol>
+            <li>
+              <p>Si la inscripción fue personal mandar un correo con el asunto “CONST IECA NOMBRE COMPLETO” al correo <a
+                  href="mailto:coimpi.registro2023@utsalamanca.edu.mx">coimpi.registro2023@utsalamanca.edu.mx</a>,
+                mencionando su nombre completo, el día que asistió y en qué taller participó.</p>
+            </li>
+            <li>
+              <p>Cuando un docente o directivo de la universidad haya hecho un registro masivo, se le enviará un correo
+                al docente o directivo con las constancias de los participantes para que se las puedan facilitar.</p>
+            </li>
+          </ol>
+          <p><strong>Nota:</strong> Se aclara que en caso de no haber asistido presencialmente o no haber cumplido con
+            el tiempo total a algún taller, no se podrá emitir la constancia del IECA, ya que los participantes se les
+            realizó un pase de lista por cada taller y también los participantes llenaron sus formatos.</p>
+
+          <hr>
+
+          <h2 class="mb-4">CONSTANCIAS COIMPI 2023</h2>
+          <p>Para la emisión de las constancias de participación de COIMPI 2023 mandar correo a <a
+              href="mailto:coimpi.registro2023@utsalamanca.edu.mx">coimpi.registro2023@utsalamanca.edu.mx</a>
+            mencionando su nombre completo y a qué universidad pertenece para realizar la emisión de la constancia.</p>
+
+          <hr>
+
+          <h2 class="mb-4">CONSTANCIAS ARTICULOS</h2>
+          <p>Para la emisión de las constancias de participación por artículos de COIMPI 2023 mandar correo a <a
+              href="mailto:coimpi.registro2023@utsalamanca.edu.mx">coimpi.registro2023@utsalamanca.edu.mx</a>
+            mencionando su nombre completo y cuál fue el artículo publicado.</p>
+          <p>Para ver la publicación del artículo, dar clic en el siguiente enlace:</p>
+          <a href="https://revistatecnologicacea.mx/" target="_blank" class="btn btn-primary mb-3">Ver artículo en la
+            revista</a>
+          <p>La revista en la cual está publicado el artículo tiene el número 24, accede al archivo de la revista y se
+            tendrán los datos del artículo, así como el mismo artículo.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- El archivo assets/js/main.js se carga en app.module.ts 
       con la funcion loadScripts -->
-    <!-- <script src="assets/js/main.js"></script> -->
+  <!-- <script src="assets/js/main.js"></script> -->
+  <script>
+    var myModal = document.getElementById('staticBackdrop');
+    var modal = bootstrap.Modal.getOrCreateInstance(myModal)
+    modal.show()
+  </script>
 
 </body>
+
 </html>

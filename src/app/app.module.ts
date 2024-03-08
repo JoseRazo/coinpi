@@ -22,7 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegistroComponent } from './views/registro/registro.component';
 import { EventoCulturalComponent } from './views/evento-cultural/evento-cultural.component';
-
 @NgModule({
   declarations: [
     AppComponent,

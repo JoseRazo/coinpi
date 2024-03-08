@@ -5,17 +5,21 @@ RUN mkdir -p /home/app
 WORKDIR /home/app
 
 # install angular
-RUN npm install -g @angular/cli
+RUN npm install -g @angular/cli@13
 
 # copy dependency files
 COPY package.json /home/app/package.json
 
 # install dependencies
-RUN npm install
+RUN npm install --legacy-peer-deps
+
+# COPY project files
+COPY . .
 
 # RUN server
 EXPOSE 4200
 CMD ["ng", "serve", "--host", "0.0.0.0", "--poll=2000", "--port", "4200", "--disable-host-check"]
+
 
 # Imagen que se usa cuando la APP angular aun no esta creada
 # RUN npm install -g @angular/cli
